@@ -1,0 +1,21 @@
+{
+    "name": "itsmattch/nexus-bridge",
+    "description": "Leverage Nexus in Laravel projects with Nexus Bridge.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Itsmattch\\NexusBridge\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mateusz Chmielewski",
+            "email": "hello@itsmattch.com",
+            "homepage":  "https://itsmattch.com/"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    }
+}
