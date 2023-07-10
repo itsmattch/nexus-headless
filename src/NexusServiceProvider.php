@@ -4,6 +4,7 @@ namespace Itsmattch\NexusBridge;
 
 use Illuminate\Support\ServiceProvider;
 use Itsmattch\NexusBridge\Console\Generator\MakeActionCommand;
+use Itsmattch\NexusBridge\Console\Generator\MakeModelCommand;
 use Itsmattch\NexusBridge\Console\Generator\MakeResourceCommand;
 
 class NexusServiceProvider extends ServiceProvider
@@ -18,6 +19,7 @@ class NexusServiceProvider extends ServiceProvider
             $this->commands([
                 MakeResourceCommand::class,
                 MakeActionCommand::class,
+                MakeModelCommand::class,
             ]);
         }
     }
