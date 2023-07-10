@@ -1,0 +1,12 @@
+<?php
+
+namespace DummyNamespace;
+
+use Itsmattch\Nexus\Model\Model;
+
+class DummyClass extends Model
+{
+    protected array $badges = [
+        //
+    ];
+}
