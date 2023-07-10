@@ -6,7 +6,7 @@ use Illuminate\Console\GeneratorCommand;
 
 class MakeActionCommand extends GeneratorCommand
 {
-    protected $name = 'make:nexus:action';
+    protected $name = 'nexus:make:action';
 
     protected $description = 'Create new action';
 

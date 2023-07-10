@@ -6,7 +6,7 @@ use Illuminate\Console\GeneratorCommand;
 
 class MakeResourceCommand extends GeneratorCommand
 {
-    protected $name = 'make:nexus:resource';
+    protected $name = 'nexus:make:resource';
 
     protected $description = 'Create new resource';
 
