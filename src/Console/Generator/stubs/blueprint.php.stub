@@ -1,0 +1,20 @@
+<?php
+
+namespace DummyNamespace;
+
+use Itsmattch\Nexus\Assembler\Builder\ModelBuilder;
+use Itsmattch\Nexus\Assembler\Blueprint;
+
+class DummyClass extends Blueprint
+{
+    protected string $model;
+
+    protected array $resources = [
+        //
+    ];
+
+    protected function model(ModelBuilder $builder): void
+    {
+        //
+    }
+}

@@ -4,6 +4,7 @@ namespace Itsmattch\NexusBridge;
 
 use Illuminate\Support\ServiceProvider;
 use Itsmattch\NexusBridge\Console\Generator\MakeActionCommand;
+use Itsmattch\NexusBridge\Console\Generator\MakeBlueprintCommand;
 use Itsmattch\NexusBridge\Console\Generator\MakeModelCommand;
 use Itsmattch\NexusBridge\Console\Generator\MakeRepositoryCommand;
 use Itsmattch\NexusBridge\Console\Generator\MakeResourceCommand;
@@ -17,6 +18,7 @@ class NexusServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 MakeActionCommand::class,
+                MakeBlueprintCommand::class,
                 MakeModelCommand::class,
                 MakeResourceCommand::class,
                 MakeRepositoryCommand::class,
