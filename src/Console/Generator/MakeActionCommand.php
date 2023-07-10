@@ -19,6 +19,6 @@ class MakeActionCommand extends GeneratorCommand
 
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return $rootNamespace . '\Nexus\Resource\Action';
+        return $rootNamespace . '\Nexus\Resources\Actions';
     }
 }

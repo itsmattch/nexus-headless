@@ -19,6 +19,6 @@ class MakeResourceCommand extends GeneratorCommand
 
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return $rootNamespace . '\Nexus\Resource';
+        return $rootNamespace . '\Nexus\Resources';
     }
 }
