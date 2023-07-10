@@ -8,6 +8,12 @@ use Itsmattch\Nexus\Assembler\Repository;
 
 class DummyClass extends Repository
 {
+    protected string $model;
+
+    protected array $resources = [
+        //
+    ];
+
     protected function collection(CollectionBuilder $builder): void
     {
         //
