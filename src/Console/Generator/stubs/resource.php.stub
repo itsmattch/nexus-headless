@@ -1,0 +1,12 @@
+<?php
+
+namespace DummyNamespace;
+
+use Itsmattch\Nexus\Resource\Resource;
+
+class DummyClass extends Resource
+{
+    protected string $address = '';
+
+    protected string $format = '';
+}

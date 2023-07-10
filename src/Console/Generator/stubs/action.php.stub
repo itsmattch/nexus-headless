@@ -1,0 +1,14 @@
+<?php
+
+namespace DummyNamespace;
+
+use Itsmattch\Nexus\Contract\Resource;
+use Itsmattch\Nexus\Contract\Resource\Action;
+
+class DummyClass implements Action
+{
+    public function act(Resource $resource): void
+    {
+        //
+    }
+}
