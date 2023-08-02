@@ -1,6 +1,6 @@
 <?php
 
-namespace Itsmattch\NexusBridge\Console\Generator;
+namespace Itsmattch\NexusHeadless\Console\Generator;
 
 use Illuminate\Console\GeneratorCommand;
 

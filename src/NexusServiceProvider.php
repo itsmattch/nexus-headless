@@ -1,13 +1,13 @@
 <?php
 
-namespace Itsmattch\NexusBridge;
+namespace Itsmattch\NexusHeadless;
 
 use Illuminate\Support\ServiceProvider;
-use Itsmattch\NexusBridge\Console\Generator\MakeActionCommand;
-use Itsmattch\NexusBridge\Console\Generator\MakeBlueprintCommand;
-use Itsmattch\NexusBridge\Console\Generator\MakeEntityCommand;
-use Itsmattch\NexusBridge\Console\Generator\MakeRepositoryCommand;
-use Itsmattch\NexusBridge\Console\Generator\MakeResourceCommand;
+use Itsmattch\NexusHeadless\Console\Generator\MakeActionCommand;
+use Itsmattch\NexusHeadless\Console\Generator\MakeBlueprintCommand;
+use Itsmattch\NexusHeadless\Console\Generator\MakeEntityCommand;
+use Itsmattch\NexusHeadless\Console\Generator\MakeRepositoryCommand;
+use Itsmattch\NexusHeadless\Console\Generator\MakeResourceCommand;
 
 class NexusServiceProvider extends ServiceProvider
 {

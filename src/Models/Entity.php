@@ -1,6 +1,6 @@
 <?php
 
-namespace Itsmattch\NexusBridge\Models;
+namespace Itsmattch\NexusHeadless\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

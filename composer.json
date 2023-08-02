@@ -1,11 +1,10 @@
 {
-  "name": "itsmattch/nexus-bridge",
-  "description": "Leverage Nexus in Laravel projects with Nexus Bridge.",
+  "name": "itsmattch/nexus-headless",
   "type": "library",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Itsmattch\\NexusBridge\\": "src/"
+      "Itsmattch\\NexusHeadless\\": "src/"
     }
   },
   "authors": [
@@ -31,7 +30,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Itsmattch\\NexusBridge\\NexusServiceProvider"
+        "Itsmattch\\NexusHeadless\\NexusServiceProvider"
       ]
     }
   }
