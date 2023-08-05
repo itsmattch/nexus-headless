@@ -16,7 +16,7 @@
   ],
   "require": {
     "php": "^8.1",
-    "itsmattch/nexus": "dev-master"
+    "itsmattch/nexus-core": "^0.0.1"
   },
   "require-dev": {
     "orchestra/testbench": "^8.5",
