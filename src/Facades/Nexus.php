@@ -6,12 +6,13 @@ use Illuminate\Support\Facades\Facade;
 
 class Nexus extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'nexus';
     }
 
-    public function routes() {
+    public function routes(): void
+    {
         static::$app->make('router')->nexus();
     }
 }
