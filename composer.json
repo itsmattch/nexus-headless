@@ -31,7 +31,10 @@
     "laravel": {
       "providers": [
         "Itsmattch\\NexusHeadless\\NexusServiceProvider"
-      ]
+      ],
+      "aliases": {
+        "Nexus": "Itsmattch\\NexusHeadless\\Facades\\Calculator"
+      }
     }
   }
 }
