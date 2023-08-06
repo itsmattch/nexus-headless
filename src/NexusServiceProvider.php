@@ -2,7 +2,7 @@
 
 namespace Itsmattch\NexusHeadless;
 
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Itsmattch\NexusHeadless\Console\Generator\MakeActionCommand;
 use Itsmattch\NexusHeadless\Console\Generator\MakeBlueprintCommand;
