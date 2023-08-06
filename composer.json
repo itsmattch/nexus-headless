@@ -33,7 +33,7 @@
         "Itsmattch\\NexusHeadless\\NexusServiceProvider"
       ],
       "aliases": {
-        "Nexus": "Itsmattch\\NexusHeadless\\Facades\\Calculator"
+        "Nexus": "Itsmattch\\NexusHeadless\\Facades\\Nexus"
       }
     }
   }
