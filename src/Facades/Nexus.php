@@ -11,7 +11,7 @@ class Nexus extends Facade
         return 'nexus';
     }
 
-    public function routes(): void
+    public static function routes(): void
     {
         static::$app->make('router')->nexus();
     }
