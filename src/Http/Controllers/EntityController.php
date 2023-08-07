@@ -18,6 +18,7 @@ class EntityController extends Controller
     public function store(StoreEntityRequest $request): JsonResponse
     {
         $entity = Entity::create($request->all());
+
         return response()->json($entity);
     }
 
