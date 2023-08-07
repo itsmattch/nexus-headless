@@ -4,7 +4,7 @@ namespace Itsmattch\NexusHeadless\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
+use Itsmattch\NexusHeadless\Http\Requests\StoreEntityRequest;
 use Itsmattch\NexusHeadless\Models\Entity;
 
 class EntityController extends Controller
@@ -14,15 +14,9 @@ class EntityController extends Controller
         return Entity::all();
     }
 
-    public function store(Request $request)
+    public function store(StoreEntityRequest $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|unique:Itsmattch\NexusHeadless\Models\Entity,name'
-        ]);
-
-        return Entity::create([
-            'name' => $validated['name'],
-        ]);
+        return Entity::create($request->all());
     }
 
     public function show(Entity $entity): Entity
