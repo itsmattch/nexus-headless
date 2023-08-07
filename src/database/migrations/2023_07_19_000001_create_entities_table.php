@@ -9,9 +9,7 @@ return new class extends Migration {
     {
         Schema::create('entities', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('entity_type_id')->constrained();
-
-            $table->index(['id', 'entity_type_id']);
+            $table->string('name')->unique();
         });
     }
 

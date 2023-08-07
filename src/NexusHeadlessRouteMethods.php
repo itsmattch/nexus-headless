@@ -2,14 +2,17 @@
 
 namespace Itsmattch\NexusHeadless;
 
+use Illuminate\Support\Facades\Route;
+use Itsmattch\NexusHeadless\Http\Controllers\EntityController;
+
 class NexusHeadlessRouteMethods
 {
     public function nexus(): callable
     {
         return function () {
-            $this->get('hello', function () {
-                return 'world';
-            });
+            Route::resource('entity', EntityController::class)->only([
+                'index', 'store', 'show', 'destroy'
+            ]);
         };
     }
 }
