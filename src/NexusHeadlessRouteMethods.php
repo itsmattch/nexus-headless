@@ -10,7 +10,7 @@ class NexusHeadlessRouteMethods
     public function nexus(): callable
     {
         return function () {
-            Route::resource('entity', EntityController::class)->only([
+            Route::resource('entities', EntityController::class)->only([
                 'index', 'store', 'show', 'destroy'
             ]);
         };
