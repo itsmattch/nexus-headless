@@ -19,7 +19,7 @@ class EntityController extends Controller
     {
         $entity = Entity::create($request->all());
 
-        return response()->json($entity);
+        return response()->json($entity, 201);
     }
 
     public function show(Entity $entity): JsonResponse
