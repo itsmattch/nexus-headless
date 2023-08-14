@@ -17,6 +17,11 @@ class EntityCreated implements ShouldBroadcast
         public Entity $entity,
     ) {}
 
+    public function broadcastAs(): string
+    {
+        return 'EntityCreated';
+    }
+
     public function broadcastOn(): array
     {
         return [
