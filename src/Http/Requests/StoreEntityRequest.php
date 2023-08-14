@@ -3,20 +3,15 @@
 namespace Itsmattch\NexusHeadless\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Itsmattch\NexusHeadless\Rules\Plural;
 
+/**
+ * @property ?string $name
+ */
 class StoreEntityRequest extends FormRequest
 {
-    public function authorize(): bool
-    {
-        return true;
-    }
-
     public function rules(): array
     {
-        return [
-            'name' => ['required', 'string', 'lowercase', 'unique:Itsmattch\NexusHeadless\Models\Entity,name', new Plural()]
-        ];
+        return ['name' => 'required|string|lowercase|unique:Itsmattch\NexusHeadless\Models\Entity,name'];
     }
 
     protected function prepareForValidation(): void
