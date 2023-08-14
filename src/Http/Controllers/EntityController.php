@@ -5,6 +5,7 @@ namespace Itsmattch\NexusHeadless\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
+use Itsmattch\NexusHeadless\Events\EntityCreated;
 use Itsmattch\NexusHeadless\Http\Requests\StoreEntityRequest;
 use Itsmattch\NexusHeadless\Http\Resources\EntityCollection;
 use Itsmattch\NexusHeadless\Http\Resources\EntityResource;
@@ -24,6 +25,8 @@ class EntityController extends Controller
     {
         $entity = Entity::create($request->all());
         $resource = new EntityResource($entity);
+
+        EntityCreated::dispatch($entity);
 
         return response()->json($resource, 201);
     }
