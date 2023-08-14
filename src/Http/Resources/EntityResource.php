@@ -12,7 +12,7 @@ class EntityResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'badges' => new BadgeResource($this->badges),
+            'badges' => BadgeResource::collection($this->badges),
         ];
     }
 }
