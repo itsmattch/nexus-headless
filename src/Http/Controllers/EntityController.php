@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Itsmattch\NexusHeadless\Events\EntityCreated;
+use Itsmattch\NexusHeadless\Events\EntityDeleted;
 use Itsmattch\NexusHeadless\Http\Requests\StoreEntityRequest;
 use Itsmattch\NexusHeadless\Http\Resources\EntityCollection;
 use Itsmattch\NexusHeadless\Http\Resources\EntityResource;
@@ -40,7 +41,9 @@ class EntityController extends Controller
 
     public function destroy(int $entity): Response
     {
-        Entity::destroy($entity);
+        if (Entity::destroy($entity)) {
+            EntityDeleted::dispatch($entity);
+        }
 
         return response()->noContent();
     }
