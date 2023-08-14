@@ -14,8 +14,8 @@ class StoreBadgeRequest extends FormRequest
     {
         return [
             'entity_id' => 'required|integer|exists:Itsmattch\NexusHeadless\Models\Entity,id',
-            'name' => 'required|string|lowercase|unique:Itsmattch\NexusHeadless\Models\Badge,name',
-            'keys' => 'required|array',
+            'name' => 'required|string|lowercase',
+            'keys' => 'required|array|min:1',
             'keys.*' => 'required|string|lowercase',
         ];
     }
