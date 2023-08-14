@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Itsmattch\NexusHeadless\Http\Requests\StoreEntityRequest;
+use Itsmattch\NexusHeadless\Http\Resources\EntityResource;
 use Itsmattch\NexusHeadless\Models\Entity;
 
 class EntityController extends Controller
 {
     public function index(): JsonResponse
     {
-        return response()->json(Entity::all());
+        $entities = Entity::all();
+        $resource = new EntityResource($entities);
+        return response()->json($resource);
     }
 
     public function store(StoreEntityRequest $request): JsonResponse
