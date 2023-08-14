@@ -24,7 +24,7 @@ class StoreBadgeRequest extends FormRequest
     {
         $this->merge([
             'name' => strtolower($this->name),
-            'keys' => array_map('strtolower', $this->keys),
+            'keys' => array_unique(array_map('strtolower', $this->keys)),
         ]);
     }
 }

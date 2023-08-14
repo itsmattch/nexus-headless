@@ -22,7 +22,13 @@ class BadgeController extends Controller
 
     public function store(StoreBadgeRequest $request): JsonResponse
     {
+        $keys = array_map(function ($name) {
+            return ['name' => $name];
+        }, $request->keys);
+
         $badge = Badge::create($request->all());
+        $badge->keys()->createMany($keys);
+
         $resource = new BadgeResource($badge);
 
         return response()->json($resource, 201);
