@@ -7,13 +7,14 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Itsmattch\NexusHeadless\Models\Badge;
 
 class BadgeDeleted implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public function __construct(
-        public int $badgeId,
+        public Badge $badge,
     ) {}
 
     public function broadcastAs(): string
