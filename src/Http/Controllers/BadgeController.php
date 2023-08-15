@@ -30,6 +30,7 @@ class BadgeController extends Controller
 
         $badge = Badge::create($request->all());
         $badge->keys()->createMany($keys);
+        $badge->load('keys');
 
         $resource = new BadgeResource($badge);
 
