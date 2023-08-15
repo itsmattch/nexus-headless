@@ -8,17 +8,17 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class EntityDeleted implements ShouldBroadcast
+class BadgeDeleted implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public function __construct(
-        public int $entityId,
+        public int $badgeId,
     ) {}
 
     public function broadcastAs(): string
     {
-        return 'EntityDeleted';
+        return 'BadgeDeleted';
     }
 
     public function broadcastOn(): array

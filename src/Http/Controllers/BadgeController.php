@@ -5,6 +5,8 @@ namespace Itsmattch\NexusHeadless\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
+use Itsmattch\NexusHeadless\Events\BadgeCreated;
+use Itsmattch\NexusHeadless\Events\BadgeDeleted;
 use Itsmattch\NexusHeadless\Http\Requests\StoreBadgeRequest;
 use Itsmattch\NexusHeadless\Http\Resources\BadgeCollection;
 use Itsmattch\NexusHeadless\Http\Resources\BadgeResource;
@@ -31,6 +33,8 @@ class BadgeController extends Controller
 
         $resource = new BadgeResource($badge);
 
+        BadgeCreated::dispatch($badge);
+
         return response()->json($resource, 201);
     }
 
@@ -43,7 +47,9 @@ class BadgeController extends Controller
 
     public function destroy(int $badge): Response
     {
-        Badge::destroy($badge);
+        if (Badge::destroy($badge)) {
+            BadgeDeleted::dispatch($badge);
+        }
 
         return response()->noContent();
     }

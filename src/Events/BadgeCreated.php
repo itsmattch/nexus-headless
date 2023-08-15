@@ -7,18 +7,19 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Itsmattch\NexusHeadless\Models\Badge;
 
-class EntityDeleted implements ShouldBroadcast
+class BadgeCreated implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public function __construct(
-        public int $entityId,
+        public Badge $badge,
     ) {}
 
     public function broadcastAs(): string
     {
-        return 'EntityDeleted';
+        return 'BadgeCreated';
     }
 
     public function broadcastOn(): array
