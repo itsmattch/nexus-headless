@@ -46,10 +46,11 @@ class BadgeController extends Controller
         return response()->json($resource);
     }
 
-    public function destroy(Badge $badge): Response
+    public function destroy(int $badge): Response
     {
-        if (Badge::destroy($badge->id)) {
-            BadgeDeleted::dispatch($badge);
+        $entityId = Badge::find($badge)?->entity_id;
+        if ($entityId && Badge::destroy($badge)) {
+            BadgeDeleted::dispatch($badge, $entityId);
         }
 
         return response()->noContent();
